@@ -23,6 +23,7 @@
     NSArray * refPaths = [self recursivePathsForResourcesOfType:@"json" inDirectory:directory];
 
     unsigned int successes = 0;
+    unsigned int failures = 0;
 
     for (NSString * path in paths) {
         NSData *testData = [NSData dataWithContentsOfFile:path];
@@ -51,9 +52,15 @@
                 error = [validator validateJSONInstance:json[@"data"] withSchema:test[@"schema"]];
                 BOOL desired = [json[@"valid"] boolValue];
                 
-                if (error)
+                if (error && ![path containsString:@"definitions.json"])
                 {
-                    NSLog(@"error: %@", error.localizedDescription);
+                    if ([test valueForKeyPath:@"schema.messages"])
+                    {
+                        if (![error.localizedDescription isEqualToString:@"blah"]) {
+                            failures++;
+                        }
+                        XCTAssertNotNil(error.userInfo);
+                    }
                 }
                 
                 if ((error?YES:NO) == desired) {
@@ -68,6 +75,22 @@
     }
 
     XCTAssertTrue(successes >= 251, @"Expected at least 251 test successes (as of draft v4), but found %ud", successes);
+    XCTAssertTrue(failures == 0, @"Expected to have 0 failures, but found %ud", failures);
+
+}
+
+-(void)testCustomMessages
+{
+    
+    KiteJSONValidator *validator = [KiteJSONValidator new];
+    NSError *error = nil;
+    NSDictionary *testDict = @{@"data":@5, @"schema": @{@"maximum":@2, @"messages": @{@"maximum": @"blah"}}};
+    error = [validator validateJSONInstance:testDict[@"data"] withSchema:testDict[@"schema"]];
+    XCTAssertTrue(error.userInfo, @"blah");
+    
+    testDict = @{@"data":@2, @"schema": @{@"minimum":@5, @"messages": @{@"minimum": @"blah"}}};
+    error = [validator validateJSONInstance:testDict[@"data"] withSchema:testDict[@"schema"]];
+    XCTAssertTrue(error.userInfo, @"blah");
 }
 
 - (NSArray *)recursivePathsForResourcesOfType:(NSString *)type inDirectory:(NSString *)directoryPath {

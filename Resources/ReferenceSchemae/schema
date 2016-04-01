@@ -128,7 +128,7 @@
         },
         "type": {
             "anyOf": [
-                { "$ref": "#/definitions/simpleTypes" },
+                { "$ref": "#/definitions/simpleTypes"},
                 {
                     "type": "array",
                     "items": { "$ref": "#/definitions/simpleTypes" },
@@ -141,7 +141,7 @@
         "anyOf": { "$ref": "#/definitions/schemaArray" },
         "oneOf": { "$ref": "#/definitions/schemaArray" },
         "not": { "$ref": "#" }
-    },
+},
     "dependencies": {
         "exclusiveMaximum": [ "maximum" ],
         "exclusiveMinimum": [ "minimum" ]
