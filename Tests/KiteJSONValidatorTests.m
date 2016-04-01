@@ -18,7 +18,7 @@
 - (void)testDraft4Suite
 {
     NSBundle * mainBundle = [NSBundle bundleForClass:[self class]];
-    NSArray * paths = [mainBundle pathsForResourcesOfType:@"json" inDirectory:@"JSON-Schema-Test-Suite/tests/draft4"];
+    NSArray * paths = [mainBundle pathsForResourcesOfType:@"json" inDirectory:@"draft4"];
     NSString * directory = [[mainBundle resourcePath] stringByAppendingPathComponent:@"JSON-Schema-Test-Suite/remotes"];
     NSArray * refPaths = [self recursivePathsForResourcesOfType:@"json" inDirectory:directory];
 

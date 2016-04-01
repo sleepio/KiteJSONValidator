@@ -10,6 +10,7 @@
 		37C8BA21191058D2004D3E23 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37C8BA1F191058D2004D3E23 /* InfoPlist.strings */; };
 		37C8BA2819105A17004D3E23 /* schema in Resources */ = {isa = PBXBuildFile; fileRef = 37C8BA2719105A17004D3E23 /* schema */; };
 		37C8BA2919105A41004D3E23 /* KiteJSONValidator.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 37C8BA19191058D1004D3E23 /* KiteJSONValidator.bundle */; };
+		610FB1D01CAE999D00FB4F22 /* draft4 in Resources */ = {isa = PBXBuildFile; fileRef = 610FB1CF1CAE999D00FB4F22 /* draft4 */; };
 		67AE80EC18929CDB00620BF5 /* KiteValidationPair.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AE80EB18929CDB00620BF5 /* KiteValidationPair.m */; };
 		67B6B11E188C331200E1630A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B6B11D188C331200E1630A /* XCTest.framework */; };
 		67B6B128188C331200E1630A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 67B6B126188C331200E1630A /* InfoPlist.strings */; };
@@ -35,6 +36,7 @@
 		37C8BA1E191058D2004D3E23 /* KiteJSONValidator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KiteJSONValidator-Info.plist"; sourceTree = "<group>"; };
 		37C8BA20191058D2004D3E23 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		37C8BA2719105A17004D3E23 /* schema */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = schema; sourceTree = "<group>"; };
+		610FB1CF1CAE999D00FB4F22 /* draft4 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = draft4; sourceTree = "<group>"; };
 		67AE80EA18929CDB00620BF5 /* KiteValidationPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KiteValidationPair.h; sourceTree = "<group>"; };
 		67AE80EB18929CDB00620BF5 /* KiteValidationPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KiteValidationPair.m; sourceTree = "<group>"; };
 		67B6B11A188C331200E1630A /* KiteJSONValidatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KiteJSONValidatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +132,7 @@
 		67B6B123188C331200E1630A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				610FB1CF1CAE999D00FB4F22 /* draft4 */,
 				67B6B129188C331200E1630A /* KiteJSONValidatorTests.m */,
 				67B6B130188C639600E1630A /* JSON-Schema-Test-Suite */,
 				67B6B124188C331200E1630A /* Supporting Files */,
@@ -242,6 +245,7 @@
 				37C8BA2919105A41004D3E23 /* KiteJSONValidator.bundle in Resources */,
 				67B6B131188C639600E1630A /* JSON-Schema-Test-Suite in Resources */,
 				67B6B128188C331200E1630A /* InfoPlist.strings in Resources */,
+				610FB1D01CAE999D00FB4F22 /* draft4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
